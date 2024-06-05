@@ -78,7 +78,6 @@ main section {
 main .mainImg {
   width: 100%;
   object-fit: cover;
-  background-color: #065e7c;
 }
 
 main h1 {
@@ -151,6 +150,42 @@ footer {
 
 @media (min-width: 780px) {
   #app {
-    width: 100%;
+    width: 100vw;
   }
+
+  .container {
+    padding: 16rem 108rem;
+  }
+  
+  main {
+    display: grid;
+    grid-template-areas: 
+    'img sectionTwo'
+    'sectionOne sectionTwo';
+    grid-template-columns: 2fr 1fr;
+    margin-top: 28rem;
+
+  } 
+
+  main section {
+    padding: 0;
+  }
+
+  main .mainImg {
+    grid-area: img;
+    border-radius: 8px;
+  }
+
+  main .sectionOne {
+    grid-area: sectionOne;
+  }
+
+  main .sectionTwo {
+    grid-area: sectionTwo;
+  }
+
+  footer {
+    margin-top: 28rem;
+  }
+
 }
