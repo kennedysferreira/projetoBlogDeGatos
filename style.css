@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 6.25%;
+  font-family: "Mulish", sans-serif;
+
+  --colorBaseWhite: #fff;
+  --colorBaseWhiteOpc: rgba(255, 255, 255, 0.2);
+  --colorBaseBlue300: #065e7c;
+  --colorBaseGray100: #f4fcff;
+  --colorBaseGray700: #121214;
+  --colorBaseGray900: #202024;
+}
+
+#app {
+  margin: auto;
+  width: 430rem;
+}
+
+header {
+  padding: 12rem 28rem;
+  background-color: var(--colorBaseBlue300);
+}
+
+header nav {
+  display: flex;
+  gap: 26rem;
+  align-items: center;
+}
+
+.circleImg {
+  display: grid;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+  background-color: var(--colorBaseGray100);
+}
+
+.circleImg img {
+  place-self: center;
+}
+
+#profileImg {
+  width: 40rem;
+  border-radius: 50%;
+}
+
+header form {
+  flex: 1;
+}
+
+header form input {
+  width: 100%;
+  padding: 12rem 14rem;
+  background-color: var(--colorBaseWhiteOpc);
+  border: none;
+  border-radius: 4rem;
+}
+
+header form input::placeholder {
+  color: var(--colorBaseWhite);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 32rem;
+}
+
+main section {
+  padding: 0 22rem 0 26rem;
+}
+
+main .mainImg {
+  width: 100%;
+  object-fit: cover;
+  background-color: #065e7c;
+}
+
+main h1 {
+  font-weight: 700;
+  font-size: 24rem;
+  line-height: 38rem;
+
+  color: var(--colorBaseGray900);
+}
+
+main h2 {
+  font-weight: 700;
+  font-size: 18rem;
+  line-height: 28rem;
+
+  color: var(--colorBaseGray900);
+}
+
+main .sectionOne p {
+  font-weight: 400;
+  font-size: 16rem;
+  line-height: 26rem;
+
+  color: var(--colorBaseGray700);
+}
+
+.icon {
+  display: flex;
+  gap: 12rem;
+  margin: 8rem 0 32rem;
+}
+
+.titleIcon .circleImg {
+  background-color: var(--colorBaseBlue300);
+}
+
+.sectionTwo {
+  display: flex;
+  flex-direction: column;
+  gap: 32rem;
+}
+
+.sectionTwo figure {
+  display: grid;
+  grid-template-areas: "A B";
+  gap: 16rem;
+  place-items: center;
+}
+
+.sectionTwo figcaption p {
+  margin-top: 12rem;
+  font-weight: 400;
+  font-size: 14rem;
+  line-height: 22rem;
+
+  color: var(--colorBaseGray700);
+}
+
+footer {
+  background-color: var(--colorBaseBlue300);
+  padding: 16rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16rem;
+  line-height: 20rem;
+  margin-top: 40rem;
+
+  color: var(--colorBaseWhite);
+}
+
+@media (min-width: 780px) {
+  #app {
+    width: 100%;
+  }
+}
