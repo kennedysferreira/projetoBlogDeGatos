@@ -2,6 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -62,6 +64,7 @@ header form input {
 }
 
 header form input::placeholder {
+  opacity: 0.8;
   color: var(--colorBaseWhite);
 }
 
@@ -148,24 +151,28 @@ footer {
   color: var(--colorBaseWhite);
 }
 
+/* Desktop */
 @media (min-width: 780px) {
   #app {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
     width: 100vw;
+    height: 100vh;
   }
 
   .container {
     padding: 16rem 108rem;
   }
-  
+
   main {
     display: grid;
-    grid-template-areas: 
-    'img sectionTwo'
-    'sectionOne sectionTwo';
+    grid-template-areas:
+      "img sectionTwo"
+      "sectionOne sectionTwo";
     grid-template-columns: 2fr 1fr;
     margin-top: 28rem;
-
-  } 
+    overflow-y: scroll;
+  }
 
   main section {
     padding: 0;
@@ -188,4 +195,59 @@ footer {
     margin-top: 28rem;
   }
 
+  /* Animation and transition */
+
+  figure img {
+    transition: all 200ms ease-in;
+    animation: show 500ms ease-out var(--delay);
+  }
+
+  figure img:hover {
+    filter: brightness(1.1);
+    transform: scale(1.1);
+  }
+
+  .circleImg {
+    transition: all 200ms ease-in;
+  }
+
+  .circleImg:hover {
+    filter: brightness(1.1);
+    transform: scale(1.2);
+  }
+
+  .icon .circleImg img {
+    transition: all 100ms;
+  }
+
+  .icon .circleImg img:active {
+    transform: scale(1.5);
+  }
+
+  header {
+    --startY: -100%;
+    animation: move 300ms;
+  }
+
+  footer {
+    --startY: 100%;
+    animation: move 300ms;
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0.2;
+      transform: scale(0.7);
+    }
+
+    50% {
+      transform: scale(1.2)
+    }
+  }
+
+  @keyframes move {
+    from {
+      transform: translateY(var(--startY));
+    }
+  }
 }
