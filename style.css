@@ -236,6 +236,10 @@ footer {
     animation: move 300ms;
   }
 
+  main {
+    animation: fromTop 300ms ease-out 100ms;
+  }
+
   @keyframes appear {
     0% {
       opacity: 0.2;
@@ -250,6 +254,13 @@ footer {
   @keyframes move {
     from {
       transform: translateY(var(--startY));
+    }
+  }
+
+  @keyframes fromTop {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
     }
   }
 }
